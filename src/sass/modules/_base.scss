@@ -1,0 +1,186 @@
+// ----- Base styles -----
+body {
+    font-family: $font-regular;
+    @include rem(font-size, 14px);
+    background: #fff;
+    overflow: scroll; // To offset Slidebars
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+    @include rem(margin-top, 10px);
+    @include rem(margin-bottom, 15px);
+}
+
+h1,
+.h1,
+h2,
+.h2 {}
+
+h3,
+.h3,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5 {
+    @include rem(margin-bottom, 10px);
+}
+
+h1,
+.h1 {
+    @include rem(font-size, 36px);
+}
+
+h2,
+.h2 {
+    @include rem(font-size, 30px);
+}
+
+h3,
+.h3 {
+    @include rem(font-size, 24px);
+}
+
+h4,
+.h4 {
+    @include rem(font-size, 18px);
+}
+
+h5,
+.h5 {
+    @include rem(font-size, 12px);
+}
+
+p,
+ul,
+ol {
+    @include rem(margin, 0 0 20px 0);
+}
+
+ul,
+ol {
+    @include rem(padding, 0 0 0 25px);
+
+    li {
+        @include rem(padding, 0 0 0 5px);
+    }
+    ul,
+    ol {
+        margin-bottom: 0;
+    }
+}
+
+
+// Links and Nav
+a {
+    color: #000;
+    text-decoration: none;
+    transition: all .4s;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+
+// ----- Base Layout Classes-----
+// Custom containers and columns
+.fullwidth,
+.fullwidth-sm,
+.fullwidth-lg,
+.fullwidth-np,
+.fullwidth-bg {
+    width: 100%;
+    @include clearfix();
+    clear: both;
+}
+
+.fullwidth-lg {
+    padding-top: 45px;
+    padding-bottom: 45px;
+}
+
+.fullwidth {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.fullwidth-sm {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.fullwidth-bg {
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+/*------ Max Width Queries --------*/
+
+// 320px and below
+@media (min-width: $max-xxs) {}
+
+// 480px and below
+@media (min-width: $max-xs) {}
+
+// 600px and below
+@media (max-width: $max-s) {}
+
+
+
+/*------ Min Width Queries --------*/
+
+// 480px and up
+@media (min-width: $min-xs) {}
+
+// 600px and up
+@media (min-width: $min-s) {}
+
+// 768px and up
+@media (min-width: $min-sm) {
+
+    h1,
+    .h1 {
+        @include rem(font-size, 46px);
+    }
+    h2,
+    .h2 {
+        @include rem(font-size, 36px);
+    }
+    h3,
+    .h3 {
+        @include rem(font-size, 30px);
+    }
+    h4,
+    .h4 {
+        @include rem(font-size, 24px);
+    }
+    h5,
+    .h5 {
+        @include rem(font-size, 18px);
+    }
+}
+
+// 992px and up
+@media (min-width: $min-m) {}
+
+// 1200px and up
+@media (min-width: $min-l) {}
+
+// 1400px
+@media (min-width: $min-xl) {}

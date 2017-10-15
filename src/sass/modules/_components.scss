@@ -1,0 +1,103 @@
+    // ----- Gloabl Components -----
+.btn {
+    display: inline-block;
+    @include rem('padding', 15px 20px);
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1em;
+    vertical-align: middle;
+    background: transparent;
+    border: 1px solid #000;
+    cursor: pointer;
+    transition: all 250ms;
+}
+
+.btn:hover,
+a:hover .btn {}
+
+.btn-group {
+    text-align: center;
+
+    .btn {
+        margin: 0 10px 15px 10px;
+    }
+}
+
+
+// Image groups
+.img-group {
+    img {
+        margin-bottom: 30px;
+    }
+    img:last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+// Sliders
+.cycle-slideshow {
+    position: relative;
+
+    .item {
+        position: relative;
+    }
+}
+
+.cycle-prev,
+.cycle-next {
+    position: absolute;
+    color: #fff;
+    @include rem(font-size, 50px);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, .5);
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.cycle-prev:hover,
+.cycle-next:hover {}
+
+.cycle-prev {
+    left: 20px;
+}
+
+.cycle-next {
+    right: 20px;
+}
+
+
+
+/*------ Max Width Queries --------*/
+
+// 320px and below
+@media (min-width: $max-xxs) {}
+
+// 480px and below
+@media (min-width: $max-xs) {}
+
+// 600px and below
+@media (max-width: $max-s) {}
+
+
+
+/*------ Min Width Queries --------*/
+
+// 480px and up
+@media (min-width: $min-xs) {}
+
+// 600px and up
+@media (min-width: $min-s) {}
+
+// 768px and up
+@media (min-width: $min-sm) {}
+
+// 992px and up
+@media (min-width: $min-m) {}
+
+// 1200px and up
+@media (min-width: $min-l) {}
+
+// 1400px
+@media (min-width: $min-xl) {}

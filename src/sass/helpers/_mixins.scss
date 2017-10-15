@@ -1,0 +1,71 @@
+// ----- Mixins -----
+// REM  mixin - http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
+@function parseInt($n) {
+    @return $n / ($n * 0 + 1);
+}
+
+@mixin rem($property, $values) {
+    $px: ();
+    $rem: ();
+
+    @each $value in $values {
+
+        @if $value==0 or $value==auto {
+            $px: append($px, $value);
+            $rem: append($rem, $value);
+        }
+        @else {
+            $unit: unit($value);
+            $val: parseInt($value);
+
+            @if $unit=="px" {
+                $px: append($px, $value);
+                $rem: append($rem, ($val / 10 + rem));
+            }
+
+            @if $unit=="rem" {
+                $px: append($px, ($val * 10 + px));
+                $rem: append($rem, $value);
+            }
+        }
+    }
+
+    @if $px==$rem {
+        #{$property}: $px;
+    }
+    @else {
+        #{$property}: $px;
+        #{$property}: $rem;
+    }
+}
+
+
+// Center Align Mixin
+// Centrally align a block, align parent 3d option should be enabled if the block becomes blurry - http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/
+// E.G. @include align-center() aligns an element vertically
+// E.G. @include align-center($parent: true, $parent3d: true) sets up parent element
+@mixin align-center($axis: 'vertical', $parent: false, $parent3d: false) {
+
+    $transform: ''; // Child element
+    @if ($parent !=true) {
+        display: block;
+        position: absolute; // Horizontally center
+        @if ($axis=='horizontal' or $axis=='both') {
+            left: 50%;
+            $transform: translateX(-50%);
+        } // Vertically center
+        @if ($axis=='vertical' or $axis=='both') {
+            top: 50%;
+            $transform: #{$transform} translateY(-50%);
+        }
+
+        transform: #{$transform};
+    } // Parent element
+    @else {
+        overflow: hidden;
+
+        @if ($parent3d) {
+            transform-style: preserve-3d;
+        }
+    }
+}

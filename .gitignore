@@ -1,0 +1,10 @@
+.DS_Store
+.sass-cache
+.tmp
+wp-config.php
+!wp-content/uploads/.keep
+wp-content/uploads/*/*
+node_modules
+npm-debug.log
+bower_components
+

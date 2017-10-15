@@ -1,0 +1,215 @@
+// ----- Header -----
+.header {
+    background-color: $brand-primary;
+    border-bottom: 1px #000 solid;
+    position: relative;
+    z-index: 9;
+    height: 60px;
+
+    .header_container {
+        position: relative;
+        text-align: center;
+
+
+        .logo {
+            width: 100px;
+            position: absolute;
+            left: 10px;
+
+
+            a {
+                img {
+                    max-width: 100%;
+                }
+            }
+        }
+
+        nav {
+            display: none;
+
+            ul {
+                list-style: none;
+                padding: 0;
+
+                li {
+                    display: inline;
+
+                    a {
+                        font-family: $font-heading;
+                        letter-spacing: 1px;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+
+        .mobile-nav__toggle {
+            position: absolute;
+            right: 10px;
+
+            img {
+                width: 30px;
+            }
+        }
+    }
+}
+
+.mobile-nav {
+
+    .container {
+
+        .mobile-nav_content {
+
+            .mobile-nav_logo {
+                margin-top: 20px;
+                text-align: center;
+
+                a {
+                    img {
+                        width: 150px;
+                    }
+                }
+            }
+
+            ul {
+                padding: 0;
+                list-style: none;
+
+                li {
+                    text-align: center;
+                    padding: 5px 0;
+
+                    a {
+                        color: $brand-primary;
+                        font-size: 1.8rem;
+                        letter-spacing: 1px;
+                        font-family: $font-heading;
+
+                        &:hover {
+                            color: $brand-primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+/*------ Max Width Queries --------*/
+
+// 320px and below
+@media (min-width: $max-xxs) {}
+
+// 480px and below
+@media (min-width: $max-xs) {}
+
+// 600px and below
+@media (max-width: $max-s) {}
+
+
+
+/*------ Min Width Queries --------*/
+
+// 480px and up
+@media (min-width: $min-xs) {}
+
+// 600px and up
+@media (min-width: $min-s) {}
+
+// 768px and up
+@media (min-width: $min-sm) {
+
+    .header {
+        height: 100px;
+    }
+
+    .header .header_container {
+        width: 100%;
+    }
+
+    .header .header_container .logo {
+        width: 180px;
+    }
+
+    .header .header_container nav {
+        display: inline;
+        position: relative;
+        top: 20px;
+        left: 15px;
+    }
+
+    .header .header_container nav ul {
+        display: inline;
+    }
+
+    .header .header_container nav ul li a {
+        font-size: 1.6rem;
+    }
+
+    .header .header_container .mobile-nav__toggle {
+        display: none;
+    }
+}
+
+// 800px and up
+@media (min-width: 800px) {}
+
+// 900px and up
+@media (min-width: 900px) {
+
+    .header .header_container nav ul li {
+        margin: 0 5px;
+    }
+
+    .header .header_container nav ul li a {
+        font-size: 2rem;
+    }
+}
+
+// 992px and up
+@media (min-width: $min-m) {}
+
+// 1200px and up
+@media (min-width: $min-l) {
+
+    .header {
+        height: 150px;
+    }
+
+    .header .header_container .logo {
+        width: 270px;
+        top: 10px;
+        left: 30px;
+    }
+
+    .header .header_container nav {
+        top: 35px;
+        left: 50px;
+    }
+
+    .header .header_container nav ul li {}
+
+    .header .header_container nav ul li a {
+        font-size: 2.5rem;
+    }
+}
+
+// 1400px and up
+@media (min-width: $min-xl) {
+
+    .header .header_container .logo {}
+
+    .header .header_container nav {
+        top: 40px;
+        left: 0;
+    }
+
+    .header .header_container nav ul li {
+        margin: 0 15px;
+    }
+
+    .header .header_container nav ul li a {}
+}

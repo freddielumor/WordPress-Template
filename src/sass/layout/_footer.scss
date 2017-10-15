@@ -1,0 +1,38 @@
+// ----- Footer -----
+.footer {
+    @include rem(font-size, 12px);
+}
+
+
+
+/*------ Max Width Queries --------*/
+
+// 320px and below
+@media (min-width: $max-xxs) {}
+
+// 480px and below
+@media (min-width: $max-xs) {}
+
+// 600px and below
+@media (max-width: $max-s) {}
+
+
+/*------ Min Width Queries --------*/
+
+// 480px and up
+@media (min-width: $min-xs) {}
+
+// 600px and up
+@media (min-width: $min-s) {}
+
+// 768px and up
+@media (min-width: $min-sm) {}
+
+// 992px and up
+@media (min-width: $min-m) {}
+
+// 1200px and up
+@media (min-width: $min-l) {}
+
+// 1400px
+@media (min-width: $min-xl) {}
