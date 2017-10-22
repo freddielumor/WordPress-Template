@@ -1,21 +1,13 @@
 // ----- Header -----
 .header {
-    background-color: $brand-primary;
-    border-bottom: 1px #000 solid;
-    position: relative;
-    z-index: 9;
-    height: 60px;
 
     .header_container {
         position: relative;
-        text-align: center;
-
 
         .logo {
             width: 100px;
             position: absolute;
             left: 10px;
-
 
             a {
                 img {
@@ -35,7 +27,6 @@
                     display: inline;
 
                     a {
-                        font-family: $font-heading;
                         letter-spacing: 1px;
                         text-transform: uppercase;
                     }
@@ -80,13 +71,11 @@
                     padding: 5px 0;
 
                     a {
-                        color: $brand-primary;
                         font-size: 1.8rem;
                         letter-spacing: 1px;
                         font-family: $font-heading;
 
                         &:hover {
-                            color: $brand-primary;
                         }
                     }
                 }
